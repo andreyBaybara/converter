@@ -6,13 +6,17 @@ import conv
 
 
 def converter(request):
-    """Render main page."""
+    """Render main page.
+    
+    """
     return render(request, 'base.html')
 
 
 @require_http_methods(["POST"])
 def convert_value(request):
-    """Convert and return json response."""
+    """Convert and return json response.
+    
+    """
     res = conv.convert(request)
     return HttpResponse(json.dumps({
                                     "result": res
